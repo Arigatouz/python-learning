@@ -382,48 +382,48 @@ for c in zip(numbers, letters):
     concatenated.append(c)
 print(concatenated)
 
-sons = [ 'sarah' , 'mohammad' ,'roaa']
-number_at_birth = [1,2,3]
+sons = ['sarah', 'mohammad', 'roaa']
+number_at_birth = [1, 2, 3]
 
 first_to_born = []
 
-for birth_number , son in zip(number_at_birth , sons) :
+for birth_number, son in zip(number_at_birth, sons):
     kid = (birth_number, son)
     first_to_born.append(kid)
-    
+
 print(first_to_born)
 
 
-# un zip 
+# un zip
 
-my_sons = [(1 , "Sarah") , (2  , 'Mohammad'), (3 , "Roaa")]
+my_sons = [(1, "Sarah"), (2, 'Mohammad'), (3, "Roaa")]
 '''
 the * here to split he list tules and make each one separated 
 '''
-sons_name , sons_at_birth = zip(*my_sons)
+sons_name, sons_at_birth = zip(*my_sons)
 
 print(list(sons_name))
 print(list(sons_at_birth))
 
 
-sons = [ 'sarah' , 'mohammad' ,'roaa']
+sons = ['sarah', 'mohammad', 'roaa']
 new_son_list = []
 # in here we are geting the index of each son in he list of sons and he sons list
-for i , son in zip(range(len(sons)), sons) :
-    listed_sons = (i , son)
+for i, son in zip(range(len(sons)), sons):
+    listed_sons = (i, son)
     new_son_list.append(listed_sons)
 
 print(new_son_list)
 
 # now we will use enumerate to track the index and the value in a list more easy thank zip
-numbers = [1,2,3,4,5,6]
+numbers = [1, 2, 3, 4, 5, 6]
 
-for index ,num in enumerate(numbers):
-    print(index , num)
+for index, num in enumerate(numbers):
+    print(index, num)
 
 
-print("=" *30)
-#Quiz: Zip Coordinates
+print("=" * 30)
+# Quiz: Zip Coordinates
 '''
 Use zip to write a for loop that creates a string specifying the label and coordinates of each point and appends it to the list points. Each string should be formatted as label: x, y, z. For example, the string for the first coordinate should be F: 23, 677, 4.
 '''
@@ -434,42 +434,44 @@ labels = ["F", "J", "A", "Q", "Y", "B", "W", "X"]
 
 points = []
 # write your for loop here
-for concatenated in zip(labels , x_coord , y_coord ,z_coord ):
-    appended_concatenated = "{}: {}, {}, {}".format(concatenated[0],concatenated[1],concatenated[2],concatenated[3])
-    points.append(appended_concatenated )
+for concatenated in zip(labels, x_coord, y_coord, z_coord):
+    appended_concatenated = "{}: {}, {}, {}".format(
+        concatenated[0], concatenated[1], concatenated[2], concatenated[3])
+    points.append(appended_concatenated)
 
 for point in points:
     print(point)
 
 
-print("=" *30)
-    #Quiz: Zip Lists to a Dictionary
+print("=" * 30)
+# Quiz: Zip Lists to a Dictionary
 '''
 Use zip to create a dictionary cast that uses names as keys and heights as values.
 '''
 cast_names = ["Barney", "Robin", "Ted", "Lily", "Marshall"]
 cast_heights = [72, 68, 72, 66, 76]
 cast = dict(zip(cast_names, cast_heights))
-    
+
 print(cast)
 
-print("=" *30)
-#Quiz: Unzip Tuples
+print("=" * 30)
+# Quiz: Unzip Tuples
 '''
 Unzip the cast tuple into two names and heights tuples.
 '''
-cast = (("Barney", 72), ("Robin", 68), ("Ted", 72), ("Lily", 66), ("Marshall", 76))
+cast = (("Barney", 72), ("Robin", 68), ("Ted", 72),
+        ("Lily", 66), ("Marshall", 76))
 
 # define names and heights here
-names ,heights =  zip(*cast)
+names, heights = zip(*cast)
 
 
 print(names)
 print(heights)
 
-print("=" *30)
+print("=" * 30)
 
-#Quiz: Transpose with Zip
+# Quiz: Transpose with Zip
 '''
 Use zip to transpose data from a 4-by-3 matrix to a 3-by-4 matrix. There's actually a cool trick for this! Feel free to look at the solutions if you can't figure it out.
 '''
@@ -478,18 +480,100 @@ data = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11))
 data_transpose = list(zip(*data))
 
 print(data_transpose)
-print("=" *30)
+print("=" * 30)
 
 #Quiz: Enumerate
 '''
 Use enumerate to modify the cast list so that each element contains the name followed by the character's corresponding height. For example, the first element of cast should change from "Barney Stinson" to "Barney Stinson 72".
 '''
-cast = ["Barney Stinson", "Robin Scherbatsky", "Ted Mosby", "Lily Aldrin", "Marshall Eriksen"]
+cast = ["Barney Stinson", "Robin Scherbatsky",
+        "Ted Mosby", "Lily Aldrin", "Marshall Eriksen"]
 heights = [72, 68, 72, 66, 76]
 
 # write your for loop here
-for index , single_cast in enumerate(cast):
-    cast[index] = "{} {}".format(single_cast , str(heights[index])) 
-    
-
+for index, single_cast in enumerate(cast):
+    cast[index] = "{} {}".format(single_cast, str(heights[index]))
 print(cast)
+
+# list comprehensions
+
+# Example 1
+cast = ["barney stinson", "robin scherbatsky",
+        "ted mosby", "lily aldrin", "marshall eriksen"]
+
+capitalized_cast = [single_cast.title() for single_cast in cast]
+
+print(capitalized_cast)
+
+print("=" * 30)
+
+# example 2
+squares = [x**2 for x in range(9)]
+
+print(squares)
+'''
+if i will add if condition it will be like this 
+'''
+squares = [x**2 for x in range(9) if x % 2 == 0]
+
+print(squares)
+print("=" * 30)
+'''
+if i will add if condition  and else condition we have to move the condition before the iteration it will be like this 
+'''
+squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]
+
+print(squares)
+print("=" * 30)
+
+
+# Quiz: Extract First Names
+'''
+Use a list comprehension to create a new list first_names containing just the first names in names in lowercase.
+'''
+names = ["Rick Sanchez", "Morty Smith",
+         "Summer Smith", "Jerry Smith", "Beth Smith"]
+
+first_names = [f_name.split()[0].lower()
+               for f_name in names]  # write your list comprehension here
+print(first_names)
+
+
+print("=" * 30)
+# Quiz: Multiples of Three
+'''
+Use a list comprehension to create a list multiples_3 containing
+ the first 20 multiples of 3.
+ '''
+multiples_3 = [i for i in range(3,63) if i% 3 == 0 ]  # write your list comprehension here
+
+# for i in range(3 ,63):
+#     if i % 3 == 0:
+#         multiples_3.append(i)
+      
+print(multiples_3)
+
+
+print("=" * 30)
+#Quiz: Filter Names by Scores
+'''
+Use a list comprehension to create a list of names passed that only include those that scored at least 65.
+'''
+scores = {
+             "Rick Sanchez": 70,
+             "Morty Smith": 35,
+             "Summer Smith": 82,
+             "Jerry Smith": 23,
+             "Beth Smith": 98,
+             "Ali Gamal":65
+          }
+
+passed = [key.upper() for key ,value in scores.items() if value>=65]
+
+# for key, value in scores.items():
+#     if value >=65 :
+#        passed.append(key)
+print(passed)
+print("=" * 30)
+
+print(list(zip( (0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11))))
