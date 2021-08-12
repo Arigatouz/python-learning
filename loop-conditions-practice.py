@@ -40,6 +40,8 @@ win_count_dict = {}
 print("win_count_dict = {}".format(win_count_dict))
 
 
+
+
 print('quiz 1 ends ' + ("=" * 30))
 print('quiz 2 starts ' + ("=" * 30))
 #Question 2:
