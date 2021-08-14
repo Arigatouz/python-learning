@@ -1,15 +1,15 @@
-while True :
+while True:
     try:
-        loan_amount= int(input('Enter the Loan amount you need : '))
+        loan_amount = int(input('Enter the Loan amount you need : '))
         taxes = 13
         the_final_amount_of_money_to_pay = (loan_amount * taxes) / 100
         print(the_final_amount_of_money_to_pay)
         break
     except ValueError as erroz:
         print('\n the input is invalid {} '.format(erroz))
-    except KeyboardInterrupt as btn :
-        # i cant get the hash of the error but i dont know how can i use this to be in a usefull case tho :D maybe you will find :D 
-        #love you :D
+    except KeyboardInterrupt as btn:
+        # i cant get the hash of the error but i dont know how can i use this to be in a usefull case tho :D maybe you will find :D
+        # love you :D
         print('User Asks to quit the program {}'.format(btn.__hash__()))
         break
     finally:
@@ -37,8 +37,8 @@ def party_planner(cookies, people):
     leftovers = None
     num_each = None
     # TODO: Add a try-except block here to
-    
-        #       make sure no ZeroDivisionError occurs.
+
+    #       make sure no ZeroDivisionError occurs.
     try:
         num_each = cookies // people
         leftovers = cookies % people
@@ -46,10 +46,11 @@ def party_planner(cookies, people):
         print("can't divide by zero no one is comming ?? {}".format(error))
     return(num_each, leftovers)
 
+
 # The main code block is below; do not edit this
 lets_party = 'y'
-#or lets_party == 'Y'
-while lets_party == 'y' :
+# or lets_party == 'Y'
+while lets_party == 'y':
 
     cookies = int(input("How many cookies are you baking? "))
     people = int(input("How many people are attending? "))
@@ -70,6 +71,6 @@ try:
     divided_by = int(input('enter the new divided NUmber : '))
     calculations = new_number / divided_by
     print(calculations)
-    #Exception can get you the error that happens really usefull
-except Exception as e :
+    # Exception can get you the error that happens really usefull love you kids:"D"
+except Exception as e:
     print('Exception happens {}'.format(e))
