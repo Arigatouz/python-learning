@@ -1,5 +1,7 @@
-from random import choice , sample
+from random import choice as randomchoice , sample as randomsample
 from string import ascii_letters , digits , punctuation
+
+
 
 letters = ascii_letters
 numbers = digits
@@ -15,16 +17,17 @@ special_num = int(input('How many special Characters you want in your Password? 
 password = ''
 
 for i  in range(letters_num):
-    password+= choice(letters)
+    password+= randomchoice(letters)
 
 
 for i  in range(numbers_num):
-    password+= choice(numbers)
+    password+= randomchoice(numbers)
 
 
 for i  in range(special_num):
-    password+= choice(special_characters)
+    password+= randomchoice(special_characters)
 print(password)
-mix_password = "".join(sample(password , len(password)))
+mix_password = "".join(randomsample(password , len(password)))
 
 print('your Password is :' ,mix_password)
+
