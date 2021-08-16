@@ -1,4 +1,6 @@
-with open("camelot.txt") as song:
+
+import math as MT
+with open("camelot.txt" ,'r') as song:
     file_data = song.read()
     print(song.read(2))
     print(song.read(8))
@@ -9,7 +11,7 @@ print(file_data.find('we'))
 print(file_data)
 
 list_of_lines = list()
-with open("./text_file.txt") as f:
+with open("./text_file.txt" , 'r') as f:
     for line in f:
         list_of_lines.append(line.strip())
 
@@ -32,7 +34,7 @@ Write a function called create_cast_list that takes a filename as input and retu
 def create_cast_list(filename):
     cast_list = []
     # use with to open the file filename
-    with open(filename) as actors_list:
+    with open(filename , 'r') as actors_list:
 
         # use the for loop syntax to process each line
         for actor in actors_list:
@@ -45,3 +47,10 @@ def create_cast_list(filename):
 cast_list = create_cast_list('flying_circus_cast.txt')
 for actor in cast_list:
     print(actor, cast_list.index(actor) + 1)
+
+
+# MT refears to the imported module from math 
+#at the begining of the page
+factorial_four = MT.factorial(4)
+print(factorial_four)
+
