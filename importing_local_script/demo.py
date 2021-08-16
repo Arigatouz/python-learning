@@ -1,5 +1,5 @@
 import random
-import another_moduel as nm
+import another_module as nm
 
 list_of_numbers = [15, 16, 7, 18, 19, 20, 25, 24, 36, 33]
 add_three = nm.add_three(list_of_numbers, 1)
@@ -81,10 +81,10 @@ zipfile
 Which Module? 5
 Which module can say how long your code took to run?
 
-timeit
+time it
 
 
-Our favourite modules
+Our favorite modules
 The Python Standard Library has a lot of modules! To help you get familiar with what's available, here are a selection of our favourite Python Standard Library modules and why we use them!
 
 csv: very convenient for reading and writing csv files
