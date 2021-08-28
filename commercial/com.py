@@ -25,7 +25,7 @@ def read_file(file):
         for line in lines:
             if line.startswith('Total Number of Direction(s)'):
                 counter += 1
-                data[counter] = line
+                data[counter] = ""
             else:
                 data[counter] += line
         return data
