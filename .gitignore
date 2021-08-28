@@ -1,2 +1,9 @@
 ./commercial/found.txt
 ./commercial/messages.txt
+node_modules
+*.sketch
+*.fig
+*.xd
+*.txt
+.DS_Store
+.prettierignore
