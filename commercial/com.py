@@ -1,5 +1,5 @@
 import json
-
+import re as regular
 file_name = "messages.txt"
 json_file = "commercial.json"
 
@@ -25,15 +25,32 @@ def read_file(file):
         for line in lines:
             if line.startswith('Total Number of Direction(s)'):
                 counter += 1
-                data[counter] = ""
+                data[counter] = line
             else:
                 data[counter] += line
         return data
 
 
-def write_data_as_json(file):
-    with open(file, 'w') as json_file:
-        json.dump(read_file(file_name), json_file)
+def finding_non_commercial():
+    collected_data = read_file(file_name)
+    for key, value in collected_data.items():
+        pattern = regular.compile(r'\d\d\d\d\d\d\s\D\D\D\D\D\D\D\D\(')
+        matches = pattern.finditer(value)
+        try:
+            for match in matches:
+                if match:
+                    print(key)
+                elif not match:
+                    print('not found')
+        except Exception as error:
+            print(error)
 
 
-write_data_as_json(json_file)
+finding_non_commercial()
+
+# def write_data_as_json(file):
+#     with open(file, 'w') as json_file:
+#         json.dump(read_file(file_name), json_file)
+
+
+# write_data_as_json(json_file)
