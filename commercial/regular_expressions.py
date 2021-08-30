@@ -19,7 +19,7 @@ some_data = {
 
 
 for key, value in some_data.items():
-    pattern = re.compile(r'\d\d\d\d\d\d\s\D\D\D\D\D\D\D\D\(')
+    pattern = re.compile(r'\D\D\D\D\D\D\D\D\s\D\D\D\D\D\D\D\D\(')
     matches = pattern.finditer(value)
     try:
         for match in matches:

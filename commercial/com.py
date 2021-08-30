@@ -34,13 +34,13 @@ def read_file(file):
 def finding_non_commercial():
     collected_data = read_file(file_name)
     for key, value in collected_data.items():
-        pattern = regular.compile(r'\d\d\d\d\d\d\s\D\D\D\D\D\D\D\D\(')
+        pattern = regular.compile(r'\D\D\D\D\D\D\D\D\s\D\D\D\D\D\D\D\D[(]')
         matches = pattern.finditer(value)
         try:
             for match in matches:
                 if match:
                     print(key)
-                elif not match:
+                else:
                     print('not found')
         except Exception as error:
             print(error)
