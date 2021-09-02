@@ -34,19 +34,16 @@ def read_file(file):
 def finding_non_commercial():
     collected_data = read_file(file_name)
     for key, value in collected_data.items():
-        pattern = regular.compile(r'\D\D\D\D\D\D\D\D\s\D\D\D\D\D\D\D\D[(]')
+        pattern = regular.compile(r'\D\D\D\D\D\D\D\D\s\D\D\D\D\D\D\D\D\(')
+        pattern2 = regular.compile(r'\)\D')
         matches = pattern.finditer(value)
-        try:
-            for match in matches:
-                if match:
-                    print(key)
-                else:
-                    print('not found')
-        except Exception as error:
-            print(error)
+        matches2 = pattern2.finditer(value)
+        for match in matches, matches2:
+            print(key)
 
 
 finding_non_commercial()
+
 
 # def write_data_as_json(file):
 #     with open(file, 'w') as json_file:
