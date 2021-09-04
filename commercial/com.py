@@ -33,12 +33,17 @@ def read_file(file):
 
 def finding_non_commercial():
     collected_data = read_file(file_name)
+    n = 0
     for key, value in collected_data.items():
-        pattern = regular.compile(r'\D\D\D\D\D\D\D\D\s\D\D\D\D\D\D\D\D\(')
-        pattern2 = regular.compile(r'\)\D')
-        matches = pattern.finditer(value)
-        matches2 = pattern2.finditer(value)
-        for match in matches, matches2:
+
+        regex = regular.compile(
+            r'\d\d\d\d\d\d\s\D\D\D\D\D\D\D\D\(')
+        # regex2 = regular.compile(r'')
+
+        out = [m.group() for m in regex.finditer(value)]
+        if len(out) != 0:
+            continue
+        else:
             print(key)
 
 

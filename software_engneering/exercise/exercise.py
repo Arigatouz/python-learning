@@ -7,7 +7,6 @@ df.head()
 df.columns = [label.replace(' ', '_') for label in df.columns]
 df.head()
 
-print(df)
 # Analyzing Features
 '''
 "### Analyzing Features\n",
