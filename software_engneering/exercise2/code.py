@@ -15,9 +15,10 @@ for book in intersected:
 print(selected_books)
 print(len(selected_books))
 print('time to do the job is {}'.format(time.time() - start))
-
 # that's mean sets is even faster than numpy
 start2 = time.time()
 recent_coding_books = set(recent_books).intersection(recent_programming_books)
 print(len(recent_coding_books))
 print('Duration: {} seconds'.format(time.time() - start2))
+
+
