@@ -65,8 +65,6 @@ class SalesPerson:
             last_name (str): last name of the employee
             employee_id (int): identification number of the employee
             salary (float): yearly salary of the employee
-            pants_sold (list): a list of pants objects sold by the employee
-            total_sales (float): sum of all sales made by the employee
 
         """
         self.first_name = first_name
@@ -98,8 +96,8 @@ class SalesPerson:
         """
 
         for pants in self.pants_sold:
-            print('color: {}, waist_size: {}, length: {}, price: {}' \
-                  .format(pants.color, pants.waist_size, pants.length, pants.price))
+            print('color: {}, waist_size: {}, length: {}, price: {}'.format(pants.color, pants.waist_size, pants.length,
+                                                                            pants.price))
 
     def calculate_sales(self):
         """The calculate_sales method sums the total price of all pants sold

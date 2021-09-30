@@ -7,7 +7,7 @@
 # Object VS CLass
 # object is specific like shirts(Attribute)  { color : yellow , size : medium , style : short , price : 14}
 #                         shirts(Methods)     {change_price}
-# and this is known as Class it's like the blue print to get object with attribute and methods
+# and this is known asb Class it's like the blue print to get object with attribute and methods
 class Shirts:
     def __init__(self, shirt_color, shirt_size, shirt_style, shirt_price):
         self.color = shirt_color
